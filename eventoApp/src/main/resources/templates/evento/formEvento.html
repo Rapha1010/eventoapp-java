@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thyleaf.org" 
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<th:block th:include="header"></th:block>
+	<body>
+	
+	<h3>Cadastro de Eventos</h3>
+	
+	<a class="waves-effect waves-light btn-small"  href='/eventos' ><i class="material-icons left">list</i>Eventos</a><br/><br/><br/>
+	<form class= "container" method="post">
+		Descricao:<input type="text" value="" name="nome">
+		<div class = "row">
+			<div class="input-field col s6">
+				Local:<input type="text" value="" name="local">
+			</div>
+			<div class="input-field col s3">
+				Data:<input type="date" value="" name="data">
+			</div>
+			<div class="input-field col s3">
+				Horario:<input type="text" value="" name= "horario">
+			</div>
+		</div>
+		<button class="waves-effect waves-light btn-small"  type="submit">Salvar</button>
+		</form>
+	  <!--JavaScript at end of body for optimized loading-->
+	    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	</body>
+
+</html>

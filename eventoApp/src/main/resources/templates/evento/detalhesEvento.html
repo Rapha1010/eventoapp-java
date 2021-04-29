@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thyleaf.org" 
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<th:block th:include="header"></th:block>
+	<body>
+
+	<div class="container">
+		<tr th:each="evento : ${evento}"> 
+			<div class="row">
+				<p>Descricao: <span th:text="${evento.nome}"></span></p>
+				<p>Local: <span th:text="${evento.local}"></span></p>
+				<p>Data: <span th:text="${evento.data}"></span></p>
+				<p>Horario: <span th:text="${evento.horario}"></span></p>
+			</div>
+		</tr>
+		<form method="post">
+			<div class="input-field col s6">
+			Nome: <input type="text" name= "nomeConvidado" value="">
+			</div>
+			<div class="input-field col s3">
+			RG: <input type="text" name= "rg" value="">
+			</div>
+			<button type= "submit" class="waves-effect waves-light btn small">Cadastrar</button>
+		</form>
+	<table >
+		<thead>
+			<th>RG</th>
+			<th>Nome</th>
+			<th></th>
+		</thead>
+		<tbody>
+			<tr th:each="convidado : ${convidados}"> 
+				<td>
+					<span th:text="${convidado.rg}"></span>
+				</td>
+				<td>
+					<span th:text="${convidado.nomeConvidado}"></span>
+				</td>
+				<td>
+					<a class="waves-effect waves-light small" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}" ><i class="material-icons left">delete</i></a> 
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	</div>
+
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+
+</html>
